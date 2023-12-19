@@ -1,0 +1,25 @@
+@import "src/scss/variables";
+
+.product-item {
+  max-width: 306px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+
+  img {
+    height: 420px;
+    //object-fit: cover;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: $black;
+  }
+
+  .p-price {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

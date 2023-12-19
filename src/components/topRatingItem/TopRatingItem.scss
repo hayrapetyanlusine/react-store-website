@@ -1,0 +1,38 @@
+@import "src/scss/variables";
+
+.rating-item {
+  display: flex;
+  max-width: 420px;
+  height: 300px;
+  transition: 0.3s ease-in-out;
+
+  img {
+    width: 50%;
+  }
+
+  .r-item-desc {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+
+    h3 {
+      color: $black;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 24px;
+      color: $black;
+      font-weight: 700;
+    }
+  }
+
+  &:hover {
+    background-color: $white;
+  }
+}

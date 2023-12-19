@@ -1,0 +1,14 @@
+@import "src/scss/variables.scss";
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+
+    i {
+       color: $dark-red;
+    }
+}

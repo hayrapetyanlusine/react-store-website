@@ -1,17 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './App';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {routes} from "./routers/router";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        children: [],
-    }
-]);
+const router = createBrowserRouter(routes);
 
 export const queryClient: QueryClient = new QueryClient({
     defaultOptions: {

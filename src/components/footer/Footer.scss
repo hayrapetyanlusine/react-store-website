@@ -1,0 +1,29 @@
+@import "src/scss/variables";
+
+#footer {
+  height: 450px;
+  background-color: $dark-blue;
+  color: $white;
+  display: flex;
+  justify-content: center;
+
+  .footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    .content-item {
+      max-width: 300px;
+      width: 100%;
+    }
+  }
+}
+
+.brand-copyright {
+  background-color: $dark-purple;
+  color: $white;
+  font-size: 12px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 300;
+}
