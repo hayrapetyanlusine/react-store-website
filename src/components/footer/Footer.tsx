@@ -22,11 +22,13 @@ export const Footer: FC = () => {
                 <div className="footer-content-wrapper">
                     <FooterContact/>
 
-                    {
-                        footerInfo.map(({title, pagesNames}) => (
-                            <FooterLinkItem key={title} title={title} pagesNames={pagesNames}/>
-                        ))
-                    }
+                    <div className="f-linkes">
+                        {
+                            footerInfo.map(({title, pagesNames}) => (
+                                <FooterLinkItem key={title} title={title} pagesNames={pagesNames}/>
+                            ))
+                        }
+                    </div>
 
                     <FooterUpdates/>
                 </div>
