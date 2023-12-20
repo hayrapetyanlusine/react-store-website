@@ -1,0 +1,31 @@
+@import "src/scss/variables";
+
+.newsletter-signup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .newsletter-signup-text {
+    h2{
+      font-size: 28px;
+      font-weight: 700;
+      color: $black;
+    }
+
+    p{
+      font-size: 18px;
+      font-weight: 400;
+      color: $black;
+    }
+  }
+
+  form {
+    display: flex;
+
+    input[type="email"] {
+      padding: 16px 24px;
+      width: 408px;
+    }
+  }
+}

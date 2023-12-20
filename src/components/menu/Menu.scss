@@ -1,0 +1,27 @@
+@import "src/scss/variables";
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+  padding: 25px;
+  transform: translateY(-250%);
+  transition: transform 0.3s ease-in-out;
+
+  a {
+    color: $black;
+
+    &.active {
+      color: $brown;
+    }
+  }
+
+  &.open {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+  }
+}

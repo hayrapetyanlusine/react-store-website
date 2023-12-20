@@ -1,0 +1,13 @@
+.promotional-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  width: 100%;
+
+  .promotional-info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}

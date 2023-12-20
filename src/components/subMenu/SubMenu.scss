@@ -1,0 +1,91 @@
+@import "src/scss/variables";
+
+.sub-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+
+  .brand {
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: $black;
+    }
+  }
+
+  .sub-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 150px;
+    width: 100%;
+
+    img {
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+    }
+
+    .burger-menu {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 3px;
+        margin-top: -1px;
+        margin-left: -25px;
+        background-color: $black;
+        border-radius: 8px;
+
+        &:before, &:after {
+          background: $black;
+          content: "";
+          display: block;
+          position: absolute;
+          margin-top: -3px;
+          transition: .5s;
+          width: 50px;
+          height: 3px;
+          transform: translateY(-12px);
+          top: 50%;
+          border-radius: 8px;
+        }
+
+        &:after {
+          transform: translateY(15px);
+        }
+      }
+
+      &.open {
+        span {
+          background-color: transparent;
+
+          &:before {
+            transform: rotate(-45deg);
+          }
+
+          &:after {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
