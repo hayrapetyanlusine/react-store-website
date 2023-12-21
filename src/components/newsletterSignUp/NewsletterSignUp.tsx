@@ -8,7 +8,7 @@ export const NewsletterSignUp: FC = () => {
                 <h2>SING UP FOR OUR NEWSLETTER</h2>
                 <p>Subscribe for the latest DEALS and promotions</p>
             </div>
-            <form>
+            <form className="newsletter-form">
                 <input
                     type="email"
                     placeholder="Enter your e-mail address"

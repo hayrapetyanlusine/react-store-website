@@ -9,6 +9,8 @@ import {AboutUs} from "../pages/about-us/AboutUs";
 import {News} from "../pages/news/News";
 import {ContactUs} from "../pages/contact-us/ContactUs";
 import {Categories} from "../pages/categories/Categories";
+import {SignUp} from "../pages/sign-up/SignUp";
+import {Cart} from "../pages/cart/Cart";
 
 export const routes = [
     {
@@ -48,6 +50,14 @@ export const routes = [
                 path: "contact-us",
                 element: <ContactUs />
             },
+            {
+                path: "sign-up",
+                element: <SignUp />
+            },
+            {
+                path: "cart",
+                element: <Cart/>
+            }
         ],
     }
 ];

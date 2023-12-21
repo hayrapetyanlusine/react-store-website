@@ -1,0 +1,52 @@
+@import "src/scss/variables";
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+
+  input {
+    padding: 8px;
+  }
+
+  input[type="checkbox"] {
+   margin-right: 10px;
+  }
+
+  .btns {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+
+    .btn, .reset-btn {
+      background: $green;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: $white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.5s all;
+
+      &:hover {
+       opacity: 0.9;
+      }
+    }
+
+    .reset-btn {
+      background-color: $gray;
+      color: $black;
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+  }
+
+  p {
+    color: $dark-red;
+  }
+}
