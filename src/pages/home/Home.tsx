@@ -6,13 +6,14 @@ import {NewsletterSignUp} from "../../components/newsletterSignUp/NewsletterSign
 import {EleganceCorner} from "../../components/eleganceCorner/EleganceCorner";
 import "./Home.scss";
 import {CustomSlider} from "../../components/customSlider/CustomSlider";
+import { slides } from "../../components/customSlider/SlideInfo";
 
 export const Home: FC = () => {
     return (
         <div className="home-page">
             <Search/>
             <PromotionalInfo/>
-            <CustomSlider/>
+            <CustomSlider slides={slides}/>
             <NewPrices/>
             <div className="container">
                 <EleganceCorner/>

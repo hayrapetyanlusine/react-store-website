@@ -1,18 +1,30 @@
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import "./CustomSlider.scss";
-import {Btn} from "../btn/Btn";
+import {Slide} from "../../common/interfaces/slide";
+import {SliderItem} from "./SliderItem";
 
-export const CustomSlider:FC = () => {
+interface CustomSliderProps {
+    slides: Slide[]
+}
+
+export const CustomSlider: FC<CustomSliderProps> = ({ slides }) => {
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setActiveSlide(prevIndex => (prevIndex + 1) % slides.length);
+        }, 2000);
+
+        return () => clearInterval(intervalId);
+    }, [slides.length, setActiveSlide]);
+
+    const transformValue = -activeSlide * 100;
+
     return (
-        <div className="slider-wrapper">
-            <div className="slider-item">
-                <div className="s-img"></div>
-                <div className="s-info">
-                    <p>HOT DEALS THIS WEEK</p>
-                    <h2>SALE 50% OFF <br/>MODERN FURNITURE</h2>
-                    <Btn text={"VIEW NOW"}/>
-                </div>
-            </div>
+        <div className="slider-wrapper" style={{ transform: `translateX(${transformValue}%)` }}>
+            {slides.map(slide => (
+                <SliderItem key={slide.id} {...slide} />
+            ))}
         </div>
     )
 }
