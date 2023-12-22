@@ -7,6 +7,8 @@ import {EleganceCorner} from "../../components/eleganceCorner/EleganceCorner";
 import "./Home.scss";
 import {CustomSlider} from "../../components/customSlider/CustomSlider";
 import { slides } from "../../components/customSlider/SlideInfo";
+import {Categories} from "../../components/categories/Categories";
+import {Products} from "../../components/products/Products";
 
 export const Home: FC = () => {
     return (
@@ -14,9 +16,15 @@ export const Home: FC = () => {
             <Search/>
             <PromotionalInfo/>
             <CustomSlider slides={slides}/>
-            <NewPrices/>
             <div className="container">
                 <EleganceCorner/>
+                <Categories/>
+            </div>
+
+            <NewPrices/>
+
+            <div className="container">
+                <Products/>
                 <NewsletterSignUp/>
             </div>
         </div>

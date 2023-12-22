@@ -7,7 +7,7 @@ interface CustomSliderProps {
     slides: Slide[]
 }
 
-export const CustomSlider: FC<CustomSliderProps> = ({ slides }) => {
+export const CustomSlider: FC<CustomSliderProps> = ({slides}) => {
     const [activeSlide, setActiveSlide] = useState(0);
 
     useEffect(() => {
@@ -21,10 +21,20 @@ export const CustomSlider: FC<CustomSliderProps> = ({ slides }) => {
     const transformValue = -activeSlide * 100;
 
     return (
-        <div className="slider-wrapper" style={{ transform: `translateX(${transformValue}%)` }}>
-            {slides.map(slide => (
-                <SliderItem key={slide.id} {...slide} />
-            ))}
+        <div className="slider-wrapper">
+            <div className="slider" style={{transform: `translateX(${transformValue}%)`}}>
+                {slides.map(slide => (
+                    <SliderItem key={slide.id} {...slide} />
+                ))}
+            </div>
+            <div className="dots">
+                {slides.map((slide, index) => (
+                    <div
+                        key={slide.id}
+                        className={`dot ${index === activeSlide ? 'active' : ''}`}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

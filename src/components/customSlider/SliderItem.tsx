@@ -6,14 +6,14 @@ interface SliderItemProps {
     description: string;
 }
 
-export const SliderItem: FC<SliderItemProps> = ({ title, description }) => {
+export const SliderItem: FC<SliderItemProps> = ({title, description}) => {
     return (
         <div className="slider-item">
             <div className="s-img"></div>
             <div className="s-info">
                 <p>{title}</p>
                 <h2>{description}</h2>
-                <Btn text={"VIEW NOW"} />
+                <Btn text={"VIEW NOW"}/>
             </div>
         </div>
     )

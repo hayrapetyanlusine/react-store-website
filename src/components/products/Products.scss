@@ -1,0 +1,17 @@
+@import "src/scss/variables";
+
+.products {
+  h1 {
+    color: $black;
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+  .product-item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

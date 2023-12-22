@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import "./TopRatingItem.scss";
+import {RatingStars} from "./RatingStars";
 
 interface TopRatingItemProps {
     url: string,
@@ -13,6 +14,7 @@ export const TopRatingItem: FC<TopRatingItemProps> = ({url, name, price}) => {
             <img src={url} alt="img"/>
             <div className="r-item-desc">
                 <h3>{name}</h3>
+                <RatingStars/>
                 <p>{price}$</p>
             </div>
         </div>
