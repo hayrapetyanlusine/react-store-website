@@ -1,15 +1,14 @@
-import {FC} from "react";
-import {Search} from "../../components/search/Search";
-import {PromotionalInfo} from "../../components/promotionalInfo/PromotionalInfo";
-import {NewPrices} from "../../components/newPrices/NewPrices";
 import {NewsletterSignUp} from "../../components/newsletterSignUp/NewsletterSignUp";
+import {PromotionalInfo} from "../../components/promotionalInfo/PromotionalInfo";
 import {EleganceCorner} from "../../components/eleganceCorner/EleganceCorner";
-import "./Home.scss";
 import {CustomSlider} from "../../components/customSlider/CustomSlider";
+import {NewPrices} from "../../components/newPrices/NewPrices";
 import { slides } from "../../components/customSlider/SlideInfo";
 import {Categories} from "../../components/categories/Categories";
 import {Products} from "../../components/products/Products";
-import {Slider} from "../../components/slider/Slider";
+import {Search} from "../../components/search/Search";
+import {FC} from "react";
+import "./Home.scss";
 
 export const Home: FC = () => {
     return (

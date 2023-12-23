@@ -3,14 +3,9 @@ import React from "react";
 import {Error} from "../pages/error/Error";
 import {Home} from "../pages/home/Home";
 import {Store} from "../pages/store/Store";
-import {Brand} from "../pages/brand/Brand";
-import {Pages} from "../pages/pages/Pages";
-import {AboutUs} from "../pages/about-us/AboutUs";
-import {News} from "../pages/news/News";
-import {ContactUs} from "../pages/contact-us/ContactUs";
-import {Categories} from "../pages/categories/Categories";
-import {SignUp} from "../pages/sign-up/SignUp";
 import {Cart} from "../pages/cart/Cart";
+import { LogIn } from "../pages/log-in/LogIn";
+import { SignUp } from "../pages/sign-up/SignUp";
 
 export const routes = [
     {
@@ -28,27 +23,31 @@ export const routes = [
             },
             {
                 path: "categories",
-                element: <Categories/>
+                element: <h2>Categories</h2>
             },
             {
                 path: "brand",
-                element: <Brand />
+                element: <h2>Brand</h2>
             },
             {
                 path: "pages",
-                element: <Pages />
+                element: <h2>Pages</h2>
             },
             {
                 path: "about-us",
-                element: <AboutUs />
+                element: <h2>About us</h2>
             },
             {
                 path: "news",
-                element: <News />
+                element: <h2>News</h2>
             },
             {
                 path: "contact-us",
-                element: <ContactUs />
+                element: <h2>Contact us</h2>
+            },
+            {
+                path: "log-in",
+                element: <LogIn />
             },
             {
                 path: "sign-up",

@@ -4,7 +4,7 @@ import "./ProductItem.scss";
 interface ProductItemProps {
     url: string,
     name: string
-    price?: number
+    price?: string
 }
 
 export const ProductItem: FC<ProductItemProps> = ({url, name, price}) => {

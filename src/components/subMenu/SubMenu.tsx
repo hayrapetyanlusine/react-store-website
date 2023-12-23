@@ -11,7 +11,7 @@ export const SubMenu: FC<SubMenuProp> = ({toggleMenu, isOpen}) => {
     const navigate = useNavigate();
 
     const handleNavigateSignUp = () => {
-        navigate("sign-up");
+        navigate("log-in");
     };
 
     const handleNavigateBasket = () => {

@@ -10,10 +10,12 @@
 
   input {
     padding: 8px;
+    width: 100%;
   }
 
   input[type="checkbox"] {
-   margin-right: 10px;
+    margin-right: 10px;
+    width: unset;
   }
 
   .btns {
@@ -21,7 +23,8 @@
     gap: 10px;
     justify-content: end;
 
-    .btn, .reset-btn {
+    .btn,
+    .reset-btn {
       background: $green;
       border: none;
       border-radius: 8px;
@@ -32,7 +35,7 @@
       transition: 0.5s all;
 
       &:hover {
-       opacity: 0.9;
+        opacity: 0.9;
       }
     }
 

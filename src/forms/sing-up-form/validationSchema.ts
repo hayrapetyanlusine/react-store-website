@@ -18,6 +18,7 @@ export const validationSchema = object({
             /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$/,
             "Password must contain at least one letter, one number, and one special character"
         ),
+
     phone: string()
         .required("Phone is required")
         .matches(/^\d{8,}$/, "Phone number must have at least 8 digits"),
@@ -25,10 +26,11 @@ export const validationSchema = object({
     street: string()
         .matches(/^[a-zA-Z]+$/, "Only alphabets are allowed in the first name"),
 
+    zip: string(),
+
     city: string()
         .matches(/^[a-zA-Z]+$/, "Only alphabets are allowed in the first name"),
 
     country: string()
         .matches(/^[a-zA-Z]+$/, "Only alphabets are allowed in the first name")
-
 })

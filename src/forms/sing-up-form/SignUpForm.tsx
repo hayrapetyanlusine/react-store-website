@@ -34,6 +34,9 @@ export const SignUpForm: FC = () => {
                     <FastField type="text" name="street" placeholder="Main Street"/>
                     <ErrorMessage name={"street"} component="p"/>
 
+                    <Field name="zip" id="zip" placeholder="Zip"/>
+                    <ErrorMessage name="zip" component="div"/>
+
                     <FastField type="text" name="city" placeholder="Colombo"/>
                     <ErrorMessage name={"city"} component="p"/>
 
@@ -41,13 +44,13 @@ export const SignUpForm: FC = () => {
                     <ErrorMessage name={"country"} component="p"/>
 
                     <label>
-                        <Field type="checkbox" name="isadmin"/>
+                        <Field type="checkbox" name="isAdmin"/>
                         IsAdmin
                     </label>
 
                     <div className="btns">
                         <button type="submit" className="btn"> Sign up</button>
-                        <button type="reset" className="reset-btn" onClick={() => resetForm}> Reset</button>
+                        <button type="reset" className="reset-btn" onClick={() => resetForm}> Reset </button>
                     </div>
                 </Form>
             }

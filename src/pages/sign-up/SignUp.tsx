@@ -5,7 +5,7 @@ import "./SignUp.scss";
 export const SignUp: FC = () => {
     return (
         <div className="sign-up container">
-            <h1>Sign up</h1>
+            <h2>Sign up</h2>
             <SignUpForm/>
         </div>
     )
