@@ -17,12 +17,13 @@ export const Products: FC = () => {
             ) : (
                 <div className="product-item-wrapper">
                     {
-                        products.map((product: Product) => (
+                        products.map(({ id, image, name, numReviews, rating }: Product) => (
                             <TopRatingItem
-                                key={product.id}
-                                url={product.image}
-                                name={product.name}
-                                price={product.numReviews}
+                                key={id}
+                                url={image}
+                                name={name}
+                                price={numReviews}
+                                rating={rating}
                             />
                         ))
                     }

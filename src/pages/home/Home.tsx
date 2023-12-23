@@ -9,6 +9,7 @@ import {CustomSlider} from "../../components/customSlider/CustomSlider";
 import { slides } from "../../components/customSlider/SlideInfo";
 import {Categories} from "../../components/categories/Categories";
 import {Products} from "../../components/products/Products";
+import {Slider} from "../../components/slider/Slider";
 
 export const Home: FC = () => {
     return (

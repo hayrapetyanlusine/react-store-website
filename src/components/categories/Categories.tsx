@@ -10,18 +10,18 @@ export const Categories: FC = () => {
     const {data: categories, isLoading} = useCategories();
 
     return (
-       <div className="categories-wrapper">
-           {
-               isLoading ? (
-                   <Loading/>
-               ) : (
-                   <>
-                       {categories.map((category: Category) => (
-                           <ProductItem key={category._id} url={category.icon} name={category.name} />
-                       ))}
-                   </>
-               )
-           }
-       </div>
+        <div className="categories-wrapper">
+            {
+                isLoading ? (
+                    <Loading/>
+                ) : (
+                    <>
+                        {categories.map(({_id, icon, name}: Category) => (
+                            <ProductItem key={_id} url={icon} name={name}/>
+                        ))}
+                    </>
+                )
+            }
+        </div>
     )
 }

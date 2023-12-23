@@ -1,20 +1,26 @@
 import React, {FC} from 'react';
 import "./TopRatingItem.scss";
-import {RatingStars} from "./RatingStars";
 
 interface TopRatingItemProps {
     url: string,
     name: string,
-    price: number
+    price: number,
+    rating: string
 }
 
-export const TopRatingItem: FC<TopRatingItemProps> = ({url, name, price}) => {
+export const TopRatingItem: FC<TopRatingItemProps> = ({url, name, price, rating}) => {
     return (
         <div className="rating-item">
             <img src={url} alt="img"/>
             <div className="r-item-desc">
                 <h3>{name}</h3>
-                <RatingStars/>
+                <meter
+                    className="rating"
+                    min="0"
+                    max="5"
+                    value={rating}
+                    style={{'--percent': `${(+rating / 5) * 100}%`} as any}
+                />
                 <p>{price}$</p>
             </div>
         </div>
