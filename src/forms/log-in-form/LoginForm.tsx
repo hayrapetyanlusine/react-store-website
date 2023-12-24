@@ -1,18 +1,34 @@
 import React, {FC} from "react";
-import {ErrorMessage, FastField, Form, Formik, FormikHelpers} from "formik";
+import {ErrorMessage, FastField, Form, Formik} from "formik";
 import {InitialValues, initialValues} from "./initialValues";
 import {validationSchema} from "./validationSchema";
+import {useLoginUser} from "../../common/hooks/useLogInUser";
+import {useQueryClient} from "react-query";
+import {useNavigate} from "react-router";
 import "./loginForm.scss";
 
-const handleSubmit = (values: InitialValues, actions: FormikHelpers<InitialValues>): void => {
-    console.log(JSON.stringify(values, null, 2));
-};
 
 export const LogInForm: FC = () => {
+    const {logInUser} = useLoginUser();
+    const queryClient = useQueryClient();
+    const navigate = useNavigate();
+
+    function handleLogIn(values: InitialValues) {
+        logInUser(values, {
+            onSuccess: () => {
+                navigate('/');
+                queryClient.invalidateQueries('');
+            },
+            onError: () => {
+                console.log('login error');
+            }
+        })
+    }
+
     return (
         <Formik
             initialValues={initialValues}
-            onSubmit={handleSubmit}
+            onSubmit={(values: InitialValues) => handleLogIn(values)}
             validationSchema={validationSchema}
             initialErrors={true}
             validateOnChange={true}
@@ -26,8 +42,8 @@ export const LogInForm: FC = () => {
                     <ErrorMessage name={"password"} component="p"/>
 
                     <div className="btns">
-                        <button type="submit" className="log-btn"> Log in</button>
-                        <button type="reset" className="login-reset-btn" onClick={() => resetForm}> Reset</button>
+                        <button type="submit" className="log-btn"> Log in </button>
+                        <button type="reset" className="login-reset-btn" onClick={() => resetForm}> Reset </button>
                     </div>
                 </Form>
             }

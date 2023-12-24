@@ -3,7 +3,7 @@ import {PromotionalInfo} from "../../components/promotionalInfo/PromotionalInfo"
 import {EleganceCorner} from "../../components/eleganceCorner/EleganceCorner";
 import {CustomSlider} from "../../components/customSlider/CustomSlider";
 import {NewPrices} from "../../components/newPrices/NewPrices";
-import { slides } from "../../components/customSlider/SlideInfo";
+import {slides} from "../../components/customSlider/SlideInfo";
 import {Categories} from "../../components/categories/Categories";
 import {Products} from "../../components/products/Products";
 import {Search} from "../../components/search/Search";

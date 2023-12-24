@@ -1,0 +1,24 @@
+@import "../../scss/variables.scss";
+
+.category-filter-container {
+    width: 100%;
+    display: flex;
+
+    .category-names {
+        max-width: 300px;
+        width: 100%;
+
+        p {
+            color: $black;
+            font-weight: 400;
+
+            &.active {
+                color: $dark-brown;
+            }
+        }
+    }
+
+    .item-lists {
+        width: 100%;
+    }
+}

@@ -8,6 +8,7 @@ import {Btn} from "../btn/Btn";
 
 export const Products: FC = () => {
     const {data: products, isLoading} = useProducts();
+    // const {data: products, isLoading, loadMore, hasMore} = useProducts();
 
     return (
         <div className="products">
@@ -17,6 +18,7 @@ export const Products: FC = () => {
             ) : (
                 <div className="product-item-wrapper">
                     {
+                        // products?.pages
                         products.map(({ id, image, name, numReviews, rating }: Product) => (
                             <TopRatingItem
                                 key={id}
@@ -30,6 +32,7 @@ export const Products: FC = () => {
                 </div>
             )}
             <Btn text={"Load more"}/>
+            {/* {hasMore && <button onClick={loadMore}>Load More</button>} */}
         </div>
     )
 }

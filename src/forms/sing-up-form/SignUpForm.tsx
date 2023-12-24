@@ -1,18 +1,34 @@
 import React, {FC} from "react";
-import {ErrorMessage, FastField, Field, Form, Formik, FormikHelpers} from "formik";
+import {ErrorMessage, FastField, Field, Form, Formik} from "formik";
 import {initialValues, InitialValues} from "./initialvalues";
 import {validationSchema} from "./validationSchema";
+import { useRegistration } from "../../common/hooks/useRegistration";
+import {useQueryClient} from "react-query";
+import {useNavigate} from "react-router";
 import "./SignUpForm.scss";
 
-const handleSubmit = (values: InitialValues, actions: FormikHelpers<InitialValues>): void => {
-    console.log(JSON.stringify(values, null, 2));
-};
 
 export const SignUpForm: FC = () => {
+    const {registerUser} = useRegistration();
+    const queryClient = useQueryClient();
+    const navigate = useNavigate();
+
+    function handleRegister(values: InitialValues) {
+        registerUser(values, {
+            onSuccess: () => {
+                navigate('/log-in');
+                queryClient.invalidateQueries('');
+            },
+            onError: () => {
+                console.log('error');
+            }
+        })
+    }
+
     return (
         <Formik
             initialValues={initialValues}
-            onSubmit={handleSubmit}
+            onSubmit={(values: InitialValues) => handleRegister(values)}
             validationSchema={validationSchema}
             initialErrors={true}
             validateOnChange={true}
