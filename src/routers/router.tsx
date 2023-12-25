@@ -6,6 +6,7 @@ import {Store} from "../pages/store/Store";
 import {Cart} from "../pages/cart/Cart";
 import { LogIn } from "../pages/log-in/LogIn";
 import { SignUp } from "../pages/sign-up/SignUp";
+import {DetailViewProduct} from "../pages/detailViewProduct/DetailViewProduct";
 
 export const routes = [
     {
@@ -20,6 +21,14 @@ export const routes = [
             {
                 path: "store",
                 element: <Store />
+            },
+            {
+                path: "store/:id",
+                element: <Store />
+            },
+            {
+                path: "store/:id/:productId",
+                element: <DetailViewProduct />
             },
             {
                 path: "categories",

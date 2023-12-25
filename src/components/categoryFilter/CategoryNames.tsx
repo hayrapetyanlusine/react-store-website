@@ -1,13 +1,19 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
+import {useNavigate} from "react-router";
 
 interface CategoryNamesProps {
     name: string,
-    isActive: string,
+    isActive: boolean,
     id: string
 }
 
-export const CategoryNames: FC<CategoryNamesProps> = ({ name, isActive, id }) => {
+export const CategoryNames: FC<CategoryNamesProps> = ({name, isActive, id}) => {
+    const navigate = useNavigate();
+
     return (
-        <p className={isActive ? "active" : ""}> {name} </p>
+        <p
+            className={isActive ? "c-name active" : "c-name"}
+            onClick={() => navigate("/store/" + id)}
+        > {name} </p>
     )
 }

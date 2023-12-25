@@ -1,9 +1,9 @@
-export interface Product {
+export interface FProduct {
     id: string,
-    name: string,
-    rating: string,
     image: string,
-    numReviews: number,
+    name: string,
+    price: string,
+    rating: string,
     category: {
         _id: string;
     };

@@ -13,9 +13,9 @@ export const useProducts = () => useQuery({
 //         queryFn: ({pageParam = 1}) => getProducts(pageParam),
 //         getNextPageParam: (lastPage, pages) => lastPage.nextCursor
 //     });
-
+//
 //     const loadMore = () => fetchNextPage();
-
+//
 //     return {
 //         data,
 //         isLoading,

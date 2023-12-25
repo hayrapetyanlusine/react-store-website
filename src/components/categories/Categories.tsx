@@ -4,6 +4,7 @@ import {Loading} from "../loading/Loading";
 import {ProductItem} from "../productItem/ProductItem";
 import "./Categories.scss";
 import {Category} from "../../common/interfaces/category";
+import {Link} from "react-router-dom";
 
 
 export const Categories: FC = () => {
@@ -17,7 +18,9 @@ export const Categories: FC = () => {
                 ) : (
                     <>
                         {categories.map(({_id, icon, name}: Category) => (
-                            <ProductItem key={_id} url={icon} name={name}/>
+                            <Link to={`store/${_id}`} key={_id}>
+                                <ProductItem key={_id} url={icon} name={name}/>
+                            </Link>
                         ))}
                     </>
                 )

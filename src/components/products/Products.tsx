@@ -5,6 +5,7 @@ import {Loading} from "../loading/Loading";
 import {Product} from "../../common/interfaces/product";
 import "./Products.scss";
 import {Btn} from "../btn/Btn";
+import {Link} from "react-router-dom";
 
 export const Products: FC = () => {
     const {data: products, isLoading} = useProducts();
@@ -19,20 +20,22 @@ export const Products: FC = () => {
                 <div className="product-item-wrapper">
                     {
                         // products?.pages
-                        products.map(({ id, image, name, numReviews, rating }: Product) => (
-                            <TopRatingItem
-                                key={id}
-                                url={image}
-                                name={name}
-                                price={numReviews}
-                                rating={rating}
-                            />
+                        products.map(({ id, image, name, numReviews, rating, category}: Product) => (
+                            <Link to={`store/${id}/${category._id}`} key={id}>
+                                <TopRatingItem
+                                    key={id}
+                                    url={image}
+                                    name={name}
+                                    price={numReviews}
+                                    rating={rating}
+                                />
+                            </Link>
                         ))
                     }
                 </div>
             )}
             <Btn text={"Load more"}/>
-            {/* {hasMore && <button onClick={loadMore}>Load More</button>} */}
+            {/* {hasMore && <button onClick={loadMore}>Load More</button>}*/}
         </div>
     )
 }
