@@ -35,8 +35,8 @@ export const LogInForm: FC = () => {
         >
             {({resetForm}) =>
                 <Form className='login-form'>
-                    <FastField type="text" name="name" placeholder="Admin"/>
-                    <ErrorMessage name={"name"} component="p"/>
+                    <FastField type="email" name="email" placeholder="email"/>
+                    <ErrorMessage name={"email"} component="p"/>
 
                     <FastField type="password" name="password" placeholder="password"/>
                     <ErrorMessage name={"password"} component="p"/>

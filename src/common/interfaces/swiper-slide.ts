@@ -1,6 +1,6 @@
 export interface SwiperSlider {
     id: string
-    url: string,
+    image: string,
     name: string,
     price: string
 }

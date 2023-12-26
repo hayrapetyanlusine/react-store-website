@@ -1,9 +1,9 @@
 export interface InitialValues {
-    name: string,
+    email: string,
     password: string,
 }
 
 export const initialValues: InitialValues = {
-    name: "",
+    email: "",
     password: "",
 }

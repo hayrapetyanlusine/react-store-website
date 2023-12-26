@@ -8,6 +8,7 @@ export const Checkout: FC = () => {
             <div>
                 <p>Total</p> <p>${82.98}$</p>
             </div>
+
             <Btn text={"Continue to checkout"}/>
         </div>
     )

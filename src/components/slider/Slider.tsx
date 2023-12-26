@@ -5,6 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import React, {FC} from "react";
 import "./Slider.scss";
 import 'swiper/css';
+import {log} from "util";
 
 interface SwiperSliderProps {
     slides: SwiperSlider[]
@@ -14,7 +15,7 @@ export const Slider: FC<SwiperSliderProps> = ({ slides }) => {
     return (
         <Swiper
             loop={true}
-            spaceBetween={20}
+            spaceBetween={80}
             slidesPerView={4}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             navigation={{
@@ -27,7 +28,7 @@ export const Slider: FC<SwiperSliderProps> = ({ slides }) => {
         >
             {slides.map((slide: SwiperSlider) => (
                 <SwiperSlide key={slide.id}>
-                    <ProductItem url={slide.url} name={slide.name} price={slide.price} />
+                    <ProductItem url={slide.image} name={slide.name} price={slide.price} />
                 </SwiperSlide>
             ))}
             <div className="swiper-button-next">
