@@ -20,6 +20,8 @@ export const DetailViewProduct: FC = () => {
                         price={product.price}
                         images={product.images}
                         description={product.description}
+                        countInStock={product.countInStock}
+                        id={product.id}
                     />
                 )
             }

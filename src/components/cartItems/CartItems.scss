@@ -1,0 +1,68 @@
+@import "src/scss/variables";
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 750px;
+  width: 100%;
+
+  .cart-item {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    height: 200px;
+    position: relative;
+
+    img {
+      max-width: 120px;
+      width: 100%;
+      user-select: none;
+    }
+
+    .cart-item-desc {
+      color: $black;
+      font-size: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      max-width: 200px;
+      width: 100%;
+
+      h3 {
+        font-weight: 500;
+      }
+
+      p {
+        font-weight: 700;
+      }
+
+      select {
+        padding: 8px 12px;
+      }
+    }
+
+    .del-p-item-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 18px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .total {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: end;
+  }
+}

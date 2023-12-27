@@ -1,23 +1,25 @@
 import React, {FC, useState} from "react";
 import "./AddToCart.scss";
 
-export const AddToCart: FC = () => {
+interface AddToCartProps {
+    countInStock: string;
+    addToCart: (count: number) => void;
+}
+
+export const AddToCart: FC<AddToCartProps> = ({countInStock, addToCart}) => {
     const [count, setCount] = useState("");
 
-    function handleAddToCart () {
-        console.log(1);
-    }
+    const countArray: number[] = Array.from({length: +countInStock}, (_, index) => index + 1);
 
     return (
         <div className="add-to-cart">
-            <input
-                type="text"
-                name="count"
-                placeholder="Count"
-                value={count}
-                onChange={(e) => setCount(e.target.value)}
-            />
-            <button onClick={handleAddToCart}>Add to cart</button>
+            <select value={count} onChange={(e) => setCount(e.target.value)}>
+                <option value="" disabled hidden> Count</option>
+                {countArray.map((num) => (
+                    <option key={num} value={num}> {num} </option>
+                ))}
+            </select>
+            <button onClick={() => addToCart(+count)}>Add to cart</button>
         </div>
-    )
-}
+    );
+};
