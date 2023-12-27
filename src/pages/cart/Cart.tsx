@@ -1,8 +1,7 @@
 import React, {FC, useEffect, useState} from "react";
 import {useProducts} from "../../common/hooks/useProducts";
-import {Slider} from "../../components/slider/Slider";
-import {Checkout} from "../../components/checkout/Checkout";
-import {CartItems} from "../../components/cartItems/CartItems";
+import {Slider} from "../../components-new/sliders/slider/Slider";
+import {CartItems} from "../../components-new/cart/cartItems/CartItems";
 import "./Cart.scss";
 
 export const Cart: FC = () => {
