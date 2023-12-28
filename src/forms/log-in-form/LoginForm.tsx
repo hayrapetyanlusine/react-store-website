@@ -6,20 +6,25 @@ import {useLoginUser} from "../../common/hooks/useLogInUser";
 import {useQueryClient} from "react-query";
 import {useNavigate} from "react-router";
 import "./loginForm.scss";
+import {userAuth, useUserAuth} from "../../common/hooks/useUserAuth";
+import {useAtom} from "jotai";
 
 
 export const LogInForm: FC = () => {
     const {logInUser} = useLoginUser();
     const queryClient = useQueryClient();
     const navigate = useNavigate();
+    const {isUserAuth, setIsUserAuth} = useUserAuth();
 
-    function handleLogIn(values: InitialValues) {
+    // const setIsUserAuth = useAtom(userAuth);
+    function handleLogIn(values: InitialValues): void {
         logInUser(values, {
-            onSuccess: () => {
+            onSuccess: (): void => {
+                // setIsUserAuth("");
                 navigate('/');
                 queryClient.invalidateQueries('');
             },
-            onError: () => {
+            onError: (): void => {
                 console.log('login error');
             }
         })

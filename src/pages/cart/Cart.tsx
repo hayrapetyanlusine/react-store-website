@@ -1,19 +1,12 @@
 import React, {FC, useEffect, useState} from "react";
-import {useProducts} from "../../common/hooks/useProducts";
-import {Slider} from "../../components-new/sliders/slider/Slider";
-import {CartItems} from "../../components-new/cart/cartItems/CartItems";
+import {Slider} from "../../components/sliders/slider/Slider";
+import {CartItems} from "../../components/cart/cartItems/CartItems";
 import "./Cart.scss";
+import {useFeatured} from "../../common/hooks/useFeatured";
+import {Loading} from "../../components/general/loading/Loading";
 
 export const Cart: FC = () => {
-    const {data: products} = useProducts();
-    const [featured, setIsFeatured] = useState([]);
-
-    useEffect(() => {
-        if(products) {
-            const isFeatured = products.filter((product: any) => product.isFeatured);
-            setIsFeatured(isFeatured);
-        }
-    }, [products, setIsFeatured]);
+    const {data: featured, isLoading: featuredIsLoading} = useFeatured();
 
     return (
         <div className="shopping-cart-container container">
@@ -21,7 +14,13 @@ export const Cart: FC = () => {
             <div className="cart-info-container">
                 <CartItems/>
             </div>
-            <Slider slides={featured}/>
+            {
+                featuredIsLoading ? (
+                    <Loading/>
+                ) : (
+                    <Slider slides={featured}/>
+                )
+            }
         </div>
     )
 }

@@ -1,12 +1,24 @@
 import React, {FC} from "react";
 import "./Checkout.scss";
-import {Btn} from "../../general/btn/Btn";
+import {useUserAuth} from "../../../common/hooks/useUserAuth";
+import {useNavigate} from "react-router";
 
 interface CheckoutProps {
     total: number
 }
 
 export const Checkout: FC<CheckoutProps> = ({total}) => {
+    const {isUserAuth} = useUserAuth();
+    const navigate = useNavigate();
+
+    function handleCheckout () {
+        if(isUserAuth) {
+
+        }
+
+        navigate("log-in");
+    }
+
     return (
         <div className="checkout">
             <div className="checkout-text">
@@ -15,7 +27,7 @@ export const Checkout: FC<CheckoutProps> = ({total}) => {
                 <p>Total <span>{total}$</span></p>
             </div>
 
-            <Btn text={"Continue to checkout"}/>
+            <button onClick={handleCheckout}>Continue to checkout</button>
         </div>
     )
 }

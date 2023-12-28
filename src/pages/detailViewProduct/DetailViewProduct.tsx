@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import {useParams} from "react-router-dom";
 import {useProductById} from "../../common/hooks/useProductById";
-import {Loading} from "../../components-new/general/loading/Loading";
-import {SingleProduct} from "../../components-new/product/singleProduct/SingleProduct";
+import {Loading} from "../../components/general/loading/Loading";
+import {SingleProduct} from "../../components/product/singleProduct/SingleProduct";
 
 export const DetailViewProduct: FC = () => {
     const {id, productId} = useParams();

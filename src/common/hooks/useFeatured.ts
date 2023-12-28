@@ -1,9 +1,9 @@
-import {useQuery} from "react-query";
-import { getFeatured } from "../api/get-featured";
+import {useInfiniteQuery, useQuery} from "react-query";
+import {getFeatured} from "../api/get-featured";
 
-export const useFeatured = (count: any) => {
+export const useFeatured = () => {
     return useQuery({
-        queryKey: ["featuredQuery", count],
-        queryFn: () => getFeatured(count)
+        queryKey: ["featuredQuery"],
+        queryFn: () => getFeatured()
     })
 }

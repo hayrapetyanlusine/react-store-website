@@ -7,6 +7,8 @@ import {Cart} from "../pages/cart/Cart";
 import { LogIn } from "../pages/log-in/LogIn";
 import { SignUp } from "../pages/sign-up/SignUp";
 import {DetailViewProduct} from "../pages/detailViewProduct/DetailViewProduct";
+import {Orders} from "../pages/orders/Order";
+import {PrivateRouteForUser} from "./protectedRoute";
 
 export const routes = [
     {
@@ -56,7 +58,11 @@ export const routes = [
             },
             {
                 path: "log-in",
-                element: <LogIn />
+                element: (
+                    <PrivateRouteForUser>
+                        <LogIn />
+                    </PrivateRouteForUser>
+                )
             },
             {
                 path: "sign-up",
@@ -65,6 +71,10 @@ export const routes = [
             {
                 path: "cart",
                 element: <Cart/>
+            },
+            {
+                path: "/orders",
+                element: <Orders/>
             }
         ],
     }
