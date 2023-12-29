@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 import "./Footer.scss";
-import { Social } from './Social';
+import {Social} from './Social';
 
 export const Footer: FC = () => {
     return (
@@ -17,7 +17,7 @@ export const Footer: FC = () => {
                             <p>+12 3 0000 0000</p>
                             <p>contact@brandemail.com</p>
                         </div>
-                        <Social />
+                        <Social/>
                     </div>
 
                     <div className="f-linkes">
@@ -47,7 +47,7 @@ export const Footer: FC = () => {
                             <p className="f-comment">3 comments</p>
                         </div>
 
-                        <hr />
+                        <hr/>
 
                         <div className="item-info">
                             <h3><span>15</span>July</h3>

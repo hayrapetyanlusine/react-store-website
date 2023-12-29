@@ -1,0 +1,12 @@
+.orders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+
+  .orders-items-wrapper {
+    display: flex;
+    gap: 50px;
+  }
+}

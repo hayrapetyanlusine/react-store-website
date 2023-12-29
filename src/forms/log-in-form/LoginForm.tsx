@@ -6,21 +6,16 @@ import {useLoginUser} from "../../common/hooks/useLogInUser";
 import {useQueryClient} from "react-query";
 import {useNavigate} from "react-router";
 import "./loginForm.scss";
-import {userAuth, useUserAuth} from "../../common/hooks/useUserAuth";
-import {useAtom} from "jotai";
 
 
 export const LogInForm: FC = () => {
     const {logInUser} = useLoginUser();
     const queryClient = useQueryClient();
     const navigate = useNavigate();
-    const {isUserAuth, setIsUserAuth} = useUserAuth();
 
-    // const setIsUserAuth = useAtom(userAuth);
     function handleLogIn(values: InitialValues): void {
         logInUser(values, {
             onSuccess: (): void => {
-                // setIsUserAuth("");
                 navigate('/');
                 queryClient.invalidateQueries('');
             },
@@ -47,8 +42,8 @@ export const LogInForm: FC = () => {
                     <ErrorMessage name={"password"} component="p"/>
 
                     <div className="btns">
-                        <button type="submit" className="log-btn"> Log in </button>
-                        <button type="reset" className="login-reset-btn" onClick={() => resetForm}> Reset </button>
+                        <button type="submit" className="log-btn"> Log in</button>
+                        <button type="reset" className="login-reset-btn" onClick={() => resetForm}> Reset</button>
                     </div>
                 </Form>
             }

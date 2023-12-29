@@ -23,6 +23,15 @@ export const CartItems: FC = () => {
         return acc + item.price * validQuantity;
     }, 0);
 
+    const handleCheckout = () => {
+        updateCartItems([]);
+    };
+
+    const updateCartItems = (updatedCartItems: any[]) => {
+        localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+        setCartItems(updatedCartItems);
+    };
+
     return (
         <>
             <div className="cart-items">
@@ -46,7 +55,7 @@ export const CartItems: FC = () => {
                 </div>
             </div>
 
-            <Checkout total={total}/>
+            <Checkout total={total} onCheckout={handleCheckout} />
         </>
     )
 }

@@ -1,5 +1,4 @@
 import { Navigate } from "react-router-dom";
-import {useUserAuth} from "../common/hooks/useUserAuth";
 import { FC } from "react";
 
 interface ProtectedRouteProps {
@@ -7,7 +6,7 @@ interface ProtectedRouteProps {
 }
 
 export const PrivateRouteForUser:FC<ProtectedRouteProps> = ({ children }) => {
-    const {isUserAuth} = useUserAuth();
+    const isUserAuth: string | null = localStorage.getItem("token");
 
     if (isUserAuth) {
         return <Navigate to={"/"} />;

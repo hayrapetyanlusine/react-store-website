@@ -1,7 +1,7 @@
 import {FC, useState} from "react";
 import "./Header.scss";
 import {SubMenu} from "./subMenu/SubMenu";
-import { Menu } from "./menu/Menu";
+import {Menu} from "./menu/Menu";
 
 export const Header: FC = () => {
     const [isOpen, setIsOpen] = useState(true);

@@ -1,5 +1,5 @@
 import {FC} from "react";
-import { Btn } from "../../general/btn/Btn";
+import {Btn} from "../../general/btn/Btn";
 
 interface SliderItemProps {
     title: string;

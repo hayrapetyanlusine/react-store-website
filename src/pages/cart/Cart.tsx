@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import {Slider} from "../../components/sliders/slider/Slider";
 import {CartItems} from "../../components/cart/cartItems/CartItems";
 import "./Cart.scss";

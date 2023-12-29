@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 export const useFilteredProducts = (products: object[], id: string | undefined) => {
     const [filteredProducts, setFilteredProducts] = useState<any[]>([]);

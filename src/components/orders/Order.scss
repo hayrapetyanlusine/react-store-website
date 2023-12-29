@@ -1,0 +1,22 @@
+.order {
+  max-width: 800px;
+  width: 100%;
+  height: 300px;
+
+  img {
+    height: 100%;
+    width: 300px;
+  }
+
+  .order-desc {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: bold;
+
+    p{
+      font-style: italic;
+    }
+  }
+}

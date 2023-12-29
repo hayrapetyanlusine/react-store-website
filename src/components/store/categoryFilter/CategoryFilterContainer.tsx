@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import {useCategories} from "../../../common/hooks/useCategories";
 import {Loading} from "../../general/loading/Loading";
 import {CategoryNames} from "./CategoryNames";
@@ -14,7 +14,7 @@ export const CategoryFilterContainer: FC = () => {
     const {id} = useParams();
     const {data: categories, isLoading: isCategoriesLoading} = useCategories();
     const {data: products, isLoading: isProductLoading} = useProducts();
-    const filteredProducts = useFilteredProducts( products, id );
+    const filteredProducts = useFilteredProducts(products, id);
 
     return (
         <div className="category-filter-container container">

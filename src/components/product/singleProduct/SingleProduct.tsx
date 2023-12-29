@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import "./SingleProduct.scss";
 import {AddToCart} from "../addToCart/AddToCart";
 import {useParams} from "react-router-dom";
@@ -19,7 +19,7 @@ interface SingleProductProps {
 
 export const SingleProduct: FC<SingleProductProps> = ({url, name, price, images, description, countInStock, id}) => {
     const {productId} = useParams();
-    const {data: products, isLoading: isProductLoading} = useProducts();
+    const {data: products} = useProducts();
     const filteredProducts = useFilteredProducts(products, productId);
     const navigate = useNavigate();
 
@@ -40,10 +40,19 @@ export const SingleProduct: FC<SingleProductProps> = ({url, name, price, images,
         <>
             <div className="product-item-description container">
                 <div className="p-images">
-                    <img src={url}/>
-                    <img src={url}/>
+                    {
+                        images.length > 0 && (
+                            <>
+                                {JSON.parse(images[0]).map((url: string) => (
+                                    <img key={Math.random()} src={url} alt="img"/>
+                                ))}
+                            </>
+                        )
+                    }
 
-                    <div className="product-ditail">
+                    <img src={url} className="main-img"/>
+
+                    <div className="product-detail">
                         <p className="p-title">Details</p>
                         <p>{description}</p>
                     </div>

@@ -5,7 +5,7 @@ import {Loading} from "../../components/general/loading/Loading";
 import {SingleProduct} from "../../components/product/singleProduct/SingleProduct";
 
 export const DetailViewProduct: FC = () => {
-    const {id, productId} = useParams();
+    const {id} = useParams();
     const {data: product, isLoading} = useProductById(id);
 
     return (

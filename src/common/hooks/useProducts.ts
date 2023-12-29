@@ -1,4 +1,4 @@
-import {useQuery, useInfiniteQuery} from "react-query";
+import {useQuery} from "react-query";
 import {getProducts} from "../api/get-products";
 
 export const useProducts = () => useQuery({

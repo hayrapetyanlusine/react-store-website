@@ -1,5 +1,5 @@
 import {FC} from "react";
-import { useCategories } from "../../../common/hooks/useCategories";
+import {useCategories} from "../../../common/hooks/useCategories";
 import {Loading} from "../../general/loading/Loading";
 import {ProductItem} from "../../general/productItem/ProductItem";
 import "./Categories.scss";

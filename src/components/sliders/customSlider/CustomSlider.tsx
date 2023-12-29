@@ -1,6 +1,6 @@
 import {FC, useEffect, useState} from "react";
 import "./CustomSlider.scss";
-import { Slide } from "../../../common/interfaces/slide";
+import {Slide} from "../../../common/interfaces/slide";
 import {SliderItem} from "./SliderItem";
 
 interface CustomSliderProps {

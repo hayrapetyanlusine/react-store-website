@@ -4,7 +4,6 @@ import {Loading} from "../../general/loading/Loading";
 import {Product} from "../../../common/interfaces/product";
 import "./TopRatingProducts.scss";
 import {Link} from "react-router-dom";
-import {useFeatured} from "../../../common/hooks/useFeatured";
 import {useFeaturedCount} from "../../../common/hooks/useFeaturedCount";
 
 export const TopRatingProducts: FC = () => {

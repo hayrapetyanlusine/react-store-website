@@ -18,7 +18,12 @@
       height: 400px;
     }
 
-    .product-ditail{
+    .main-img {
+      max-width: 800px;
+      height: 550px;
+    }
+
+    .product-detail{
       width: 100%;
       background: $transparent-brown;
       padding: 40px;

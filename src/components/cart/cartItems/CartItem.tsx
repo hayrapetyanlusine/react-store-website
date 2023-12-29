@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, {FC, useEffect, useState} from 'react';
 
 interface CartItemProps {
     url: string;
@@ -10,9 +10,9 @@ interface CartItemProps {
     onRemove: (itemId: string) => void;
 }
 
-export const CartItem: FC<CartItemProps> = ({ url, name, price, countInStock, quantity, id, onRemove }) => {
+export const CartItem: FC<CartItemProps> = ({url, name, price, countInStock, quantity, id, onRemove}) => {
     const [count, setCount] = useState(quantity);
-    const countArray = Array.from({ length: countInStock }, (_, index) => index + 1);
+    const countArray = Array.from({length: countInStock}, (_, index) => index + 1);
 
     useEffect(() => {
         const cartItems: CartItemProps[] = JSON.parse(localStorage.getItem('cartItems') || '[]');
@@ -28,7 +28,7 @@ export const CartItem: FC<CartItemProps> = ({ url, name, price, countInStock, qu
 
     return (
         <div className="cart-item">
-            <img src={url} alt="img" />
+            <img src={url} alt="img"/>
 
             <div className="cart-item-desc">
                 <div>
@@ -45,7 +45,7 @@ export const CartItem: FC<CartItemProps> = ({ url, name, price, countInStock, qu
                 </select>
             </div>
 
-            <button className="del-p-item-btn" onClick={() => onRemove(id)}> X </button>
+            <button className="del-p-item-btn" onClick={() => onRemove(id)}> X</button>
         </div>
     );
 };
